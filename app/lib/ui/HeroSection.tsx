@@ -9,26 +9,28 @@ import PrimaryButton from '../components/primary-button';
 import { IconPhoneCall } from '@tabler/icons-react';
 import Image from 'next/image';
 
-const HeroSection = () => {
+const HeroSection = ({ id }: { id: string }) => {
 
     return (
-        <section className='w-full min-h-screen h-screen  relative'>
-            <div className='absolute w-[70vw] -right-1/4'>
+        <section id={id} className='w-full h-[90vw] md:min-h-screen md:h-screen relative'>
+            <div className='absolute w-full md:w-[70vw] -right-1/2 md:-right-1/4'>
                 <img src={"/images/intro-photo.avif"} alt='intro image' />
             </div>
 
             <div className='w-full h-full bg-linear-to-t absolute from-black from-20% to to-black/10'></div>
 
-            <div className='flex flex-col w-[35rem] absolute left-15 top-1/2 -translate-y-1/2'>
+            <div className='flex flex-col md:w-[35rem] absolute left-15 top-50 md:top-1/2 -translate-y-1/2'>
                 <TextAppearAnimation content='Where Luxury Meets Lifestyle.' fontSize='xlarge' fontFamily="rubik" />
-                <TextAppearAnimation content='Your journey to the perfect home starts with us.' fontSize='small' color='text-[var(--foreground-secondary)]' align='justify-start' />
+                <div className='w-full -translate-y-2'>
+                    <TextAppearAnimation content='Your journey to the perfect home starts with us.' fontSize='small' color='text-[var(--foreground-secondary)]' align='justify-start' />
+                </div>
             </div>
 
-            <div className='w-auto flex gap-4 items-end absolute left-15 bottom-[28%] right-15'>
+            <div className="absolute w-full px-4 pl-15  bottom-[12%] md:bottom-[25%] flex gap-4">
                 <PrimaryButton>
                     <span>Call us now</span>
                 </PrimaryButton>
-                <PrimaryButton variant='secondary'>
+                <PrimaryButton variant="secondary">
                     <span>Search Homes</span>
                 </PrimaryButton>
             </div>

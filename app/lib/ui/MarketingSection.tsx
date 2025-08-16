@@ -29,27 +29,40 @@ const MarketingSection = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     return (
-        <motion.section className='flex w-full h-auto py-15 px-15 items-center overflow-hidden'
+        <motion.section
+            className="flex flex-col lg:flex-row w-full h-auto py-12 px-5 sm:px-10 md:px-15 items-center gap-10 lg:gap-20 overflow-hidden"
         >
-            <div className='flex-1'>
-                <AnimatePresence mode='wait'>
+            {/* Left Side (Image / Card) */}
+            <div className="flex-1 w-full lg:w-1/2">
+                <AnimatePresence mode="wait">
                     <Card key={selectedIndex} details={details[selectedIndex]} />
                 </AnimatePresence>
             </div>
 
-            <div className='flex-1 max-w-[50%] flex flex-col px-15 gap-3'>
-                <AnimatedText color='text-white' align='justify-start' fontSize='medium' content='Get It Sold' />
-                <div className='w-[70%]'>
-                    <TextFadingAnimation content='Where expert strategy meets luxury marketing — delivering results beyond expectations' />
+            {/* Right Side (Text + Buttons) */}
+            <div className="flex-1 w-full lg:w-1/2 flex flex-col gap-5">
+                <AnimatedText
+                    color="text-white"
+                    align="justify-start"
+                    fontSize="medium"
+                    content="Get It Sold"
+                />
+
+                <div className="max-w-[90%] sm:max-w-[70%]">
+                    <TextFadingAnimation content="Where expert strategy meets luxury marketing — delivering results beyond expectations" />
                 </div>
-                <ul className='flex-1 mt-10'>
-                    <li>
-                        {details.map((detail, index) => <MarketingTypeButtons
-                            key={index}
-                            handleClick={() => setSelectedIndex(index)}
-                            title={detail.title}
-                            isSelected={selectedIndex === index} />)}
-                    </li>
+
+                {/* Buttons List */}
+                <ul className="flex flex-col gap-4 mt-8">
+                    {details.map((detail, index) => (
+                        <li key={index}>
+                            <MarketingTypeButtons
+                                handleClick={() => setSelectedIndex(index)}
+                                title={detail.title}
+                                isSelected={selectedIndex === index}
+                            />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </motion.section>

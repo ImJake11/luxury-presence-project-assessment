@@ -20,9 +20,9 @@ const arapey = Arapey({
 
 const textSize = {
     small: "text-[.8rem] md:text-[1rem]",
-    medium: "text-[1rem] md:text-[2rem]",
-    large: "md:text-[3rem]",
-    xlarge: "text-5xl md:text-[4rem]",
+    medium: "text-[1.5rem] md:text-[2rem]",
+    large: "text-[2.5rem] md:text-[3rem]",
+    xlarge: "text-[3rem] lg:text-[4rem] md:text-[4rem]",
 }
 
 const fonts = {
@@ -52,10 +52,11 @@ export default function AnimatedText({
 }: TextProp) {
 
     return (
-        <div className={clsx("w-full overflow-hidden h-fit flex items-center", align)}>
+        <div className={clsx("w-full overflow-hidden h-auto flex items-center", align)}>
             <AnimatePresence mode="wait">
                 {<motion.span
                     className={clsx(
+                        "-tracking-wider",
                         color,
                         textSize[fontSize],
                         weight,

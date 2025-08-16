@@ -14,7 +14,7 @@ const TextFadingAnimation = ({
 
     return (
         <motion.span
-            className={clsx(size, color)}
+            className={clsx(size, color, "text-center")}
             initial={{
                 opacity: 0,
                 x: "50%",

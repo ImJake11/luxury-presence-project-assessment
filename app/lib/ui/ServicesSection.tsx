@@ -30,7 +30,7 @@ const ServicesSection = () => {
             <AnimatedText content='Our Services' fontSize='medium' />
             <TextFadingAnimation content='Tailored Solutions for Your Needs' color='text-[var(--foreground-secondary)]' />
 
-            <ul className='w-full grid grid-cols-3 gap-5 mt-6'>
+            <ul className='w-full grid gird-cols-1 md:grid-cols-3 gap-5 mt-6'>
                 {_services.map((service, index) => <ServicesCard key={index} service={service} />)}
             </ul>
         </div>

@@ -1,11 +1,11 @@
 import AboutUs from "./lib/ui/AboutUs";
 import ContactSection from "./lib/ui/ContactSection";
+import Footer from "./lib/ui/Footer";
 import GallerySection from "./lib/ui/GallerySection";
 import Header from "./lib/ui/Header";
 import HeroSection from "./lib/ui/HeroSection";
 import MarketingSection from "./lib/ui/MarketingSection";
 import PartnerSections from "./lib/ui/ParnetsSections";
-import ParnetsSections from "./lib/ui/ParnetsSections";
 import SearchSection from "./lib/ui/SearchSection";
 import ServicesSection from "./lib/ui/ServicesSection";
 
@@ -18,14 +18,15 @@ export default function Home() {
       <div className=" fixed w-screen h-screen bg-black/20 backdrop-blur-[80px]" />
 
       <div className="w-full h-full fixed overflow-auto scroll-smooth antialiased overflow-x-hidden bg-transparent">
-        <HeroSection />
-        <PartnerSections />
-        <AboutUs />
+        <HeroSection id="hero" />
+        <PartnerSections id="partners" />
+        <AboutUs id="about" />
         <MarketingSection />
         <SearchSection />
         <GallerySection />
         <ServicesSection />
-        <ContactSection />
+        <ContactSection id="contact" />
+        <Footer />
       </div>
       <Header />
     </div>
